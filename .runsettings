@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <TestRunParameters>
+    <!-- General Config -->
+    <Parameter name="AppBaseURL" value="https://app-test.unitedtractors.com/warehousemanagement/login" />
+    <Parameter name="AppName" value="Warehouse Management" />
+    <Parameter name="SeleniumBrowser" value="Chrome" />
+    <Parameter name="SeleniumBrowserVersion" value="latest" />
+    <Parameter name="SeleniumWait" value="10" />      
+    <Parameter name="SeleniumTimeout" value="30" />    
+    <Parameter name="SeleniumSleep" value="1" />       
+    <Parameter name="SeleniumDelayAfterTest" value="500" /> 
+    <Parameter name="LogLevel" value="Info" />
+
+    <!-- Optional: if you use remote Selenium (Selenoid/Grid) -->
+    <Parameter name="IsSelenoid" value="false" />
+    <Parameter name="SeleniumRemote" value="http://localhost:5555/" />
+
+    <Parameter name="Username" value="HMU-PDC-PJKT-001" />
+    <Parameter name="Password" value="abc,123" />
+
+    <!-- Optional max retry for finding elements -->
+    <Parameter name="MaxFindElement" value="30" />
+  </TestRunParameters>
+</RunSettings>
