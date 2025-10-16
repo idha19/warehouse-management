@@ -10,5 +10,7 @@ namespace warehouse.Helpers
         public static string Password = TestContext.Parameters.Get<string>("Password", "");
         public static uint TimeoutInSeconds => TestContext.Parameters.Get<uint>("SeleniumTimeout", 30);
         public static int Sleep => TestContext.Parameters.Get<int>("SeleniumSleep", 3) * 1000;
+
+        public static string? GeneratedBasketId { get; set; }
     }
 }

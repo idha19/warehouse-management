@@ -85,12 +85,14 @@ namespace warehouse.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User logs in successfully with valid credentials")]
+        [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("UI")]
         [NUnit.Framework.CategoryAttribute("Positive")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         public virtual void UserLogsInSuccessfullyWithValidCredentials()
         {
             string[] tagsOfScenario = new string[] {
+                    "Login",
                     "UI",
                     "Positive",
                     "Regression"};
@@ -137,12 +139,14 @@ namespace warehouse.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User fails to login with invalid username")]
+        [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("UI")]
         [NUnit.Framework.CategoryAttribute("Negative")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         public virtual void UserFailsToLoginWithInvalidUsername()
         {
             string[] tagsOfScenario = new string[] {
+                    "Login",
                     "UI",
                     "Negative",
                     "Regression"};
@@ -189,12 +193,14 @@ namespace warehouse.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User fails to login with invalid password")]
+        [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("UI")]
         [NUnit.Framework.CategoryAttribute("Negative")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         public virtual void UserFailsToLoginWithInvalidPassword()
         {
             string[] tagsOfScenario = new string[] {
+                    "Login",
                     "UI",
                     "Negative",
                     "Regression"};
@@ -241,12 +247,14 @@ namespace warehouse.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User fails to login with empty username and password")]
+        [NUnit.Framework.CategoryAttribute("Login")]
         [NUnit.Framework.CategoryAttribute("UI")]
         [NUnit.Framework.CategoryAttribute("Negative")]
         [NUnit.Framework.CategoryAttribute("Regression")]
         public virtual void UserFailsToLoginWithEmptyUsernameAndPassword()
         {
             string[] tagsOfScenario = new string[] {
+                    "Login",
                     "UI",
                     "Negative",
                     "Regression"};

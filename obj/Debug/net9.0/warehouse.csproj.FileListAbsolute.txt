@@ -195,3 +195,4 @@ C:\Users\noteb\projek-ojt\Warehouse\warehouse\obj\Debug\net9.0\refint\warehouse.
 C:\Users\noteb\projek-ojt\Warehouse\warehouse\obj\Debug\net9.0\warehouse.pdb
 C:\Users\noteb\projek-ojt\Warehouse\warehouse\obj\Debug\net9.0\warehouse.genruntimeconfig.cache
 C:\Users\noteb\projek-ojt\Warehouse\warehouse\obj\Debug\net9.0\ref\warehouse.dll
+C:\Users\noteb\projek-ojt\Warehouse\warehouse\obj\Debug\net9.0\warehouse.sourcelink.json

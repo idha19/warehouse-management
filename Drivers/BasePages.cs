@@ -4,6 +4,8 @@ using warehouse.Pages.Login;
 using Dynamitey.DynamicObjects;
 using SeleniumExtras.PageObjects;
 using warehouse.Pages.Header;
+using warehouse.Pages.Home;
+using warehouse.Pages.BasketManagement;
 
 namespace warehouse.PageAssembly
 {
@@ -49,8 +51,7 @@ namespace warehouse.PageAssembly
         /// </summary>
         public LoginPage LoginPage => GetPages<LoginPage>();
         public Navbar Navbar => GetPages<Navbar>();
-        // public Navbar Navbar => GetPages<Navbar>();
-        // public RegisterPage RegisterPage => GetPages<RegisterPage>();
-        // public LoginPage LoginPage => GetPages<LoginPage>();
+        public HomePage HomePage => GetPages<HomePage>();
+        public AddBasket AddBasket => GetPages<AddBasket>();
     }
 }

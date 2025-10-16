@@ -5,7 +5,7 @@ using static warehouse.Helpers.TestDataSource;
 
 namespace warehouse.StepDefinitions
 {
-    [Binding]
+    [Binding, Scope(Tag = "Login")]
     public class LoginStepDefinition
     {
         private BasePages? BasePage => BasePagesHelper.GetBasePage;
