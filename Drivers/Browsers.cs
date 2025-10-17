@@ -32,7 +32,7 @@ namespace warehouse.PageAssembly
 
         public Browsers()
         {
-            _remoteWebDriverUrl = TestContext.Parameters.Get<string>("SeleniumRemote", "http://localhost:5555/wd/hub");
+            _remoteWebDriverUrl = TestContext.Parameters.Get<string>("SeleniumRemote", "http://localhost:4444/wd/hub");
             _browser = TestContext.Parameters.Get<string>("SeleniumBrowser", "chrome");
             _baseUrl = TestContext.Parameters.Get<string>("AppBaseURL", "https://www.google.com/");
             _isSelenoid = TestContext.Parameters.Get<bool>("IsSelenoid", false);

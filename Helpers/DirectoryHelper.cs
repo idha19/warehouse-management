@@ -35,7 +35,12 @@ public static class DirectoryHelper
     public static string GetReportsDirectory()
     {
         string? projectDirectory = GetProjectDirectory();
-        return Path.Combine(projectDirectory ?? string.Empty, "Reports", TestContext.CurrentContext.Test.Name, "ExtentReports.html");
+        var name = TestContext.CurrentContext.Test.Name;
+        new List<string> { "\"", ",", "(", ")", "null" }.ForEach(m => name = name.Replace(m, ""));
+        new List<string> { @"\" }.ForEach(m => name = name.Replace(m, "_"));
+        new List<string> { "__" }.ForEach(m => name = name.Replace(m, "_"));
+            
+        return Path.Combine(projectDirectory ?? string.Empty, "Reports", name, "ExtentReports.html");
     }
 
     /// <summary>

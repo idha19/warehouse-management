@@ -97,43 +97,24 @@ namespace warehouse.Support
         /// <param name="status"></param>
         /// <param name="name"></param>
         /// <param name="delay"></param>
-        private void SaveScreenshot(string status, string name, int delay = 0)
+        protected void SaveScreenshot(string status, string name, int delay = 0)
         {
             Thread.Sleep(delay);
             var screenshot = Browser?.GetDriver.GetScreenshot();
-
-            // Masukkan ke report
-            switch (status.ToLower())
-            {
-                case "passed":
-                    _extend?.AddTestPassScreenshot(screenshot?.AsBase64EncodedString);
-                    break;
-                case "failed":
-                    _extend?.AddTestFailureScreenshot(screenshot?.AsBase64EncodedString);
-                    break;
-                default:
-                    _extend?.AddTestInfoScreenshot(screenshot?.AsBase64EncodedString);
-                    break;
-            }
-
-            var screenshotFile = DirectoryHelper.GetScreenshotDirectory($"{name}_{status}.png");
+            name = name + "_" + status;
+            new List<string> { "\"", ",", "(", ")", "null" }.ForEach(m => name = name.Replace(m, ""));
+            new List<string> { @"\" }.ForEach(m => name = name.Replace(m, "_"));
+            new List<string> { "__" }.ForEach(m => name = name.Replace(m, "_"));
+            var screenshotFile = DirectoryHelper.GetScreenshotDirectory($"{name}.png");
             var folderSavePath = Path.GetDirectoryName(screenshotFile);
             folderSavePath = string.IsNullOrEmpty(folderSavePath) ? "./" : folderSavePath;
-
+ 
             if (!Directory.Exists(folderSavePath))
             {
                 Directory.CreateDirectory(folderSavePath);
             }
-
-            // 💡 Simpan screenshot tanpa ScreenshotImageFormat
-            var base64 = screenshot?.AsBase64EncodedString;
-            if (!string.IsNullOrEmpty(base64))
-            {
-                var bytes = Convert.FromBase64String(base64);
-                File.WriteAllBytes(screenshotFile, bytes);
-            }
-
-            SaveAttachment(screenshotFile, $"{status} {TestContext.CurrentContext.Test.Name}");
+            screenshot?.SaveAsFile(screenshotFile);
+            SaveAttachment(screenshotFile, $"{status} Test");
         }
 
 

@@ -74,20 +74,39 @@ namespace warehouse.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 4
+    #line hidden
+#line 5
+        testRunner.Given("user is logged in and on Basket Management page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User navigates to Basket Management and creates a new basket successfully")]
         [NUnit.Framework.CategoryAttribute("Basket")]
         [NUnit.Framework.CategoryAttribute("UI")]
         [NUnit.Framework.CategoryAttribute("Regression")]
-        public virtual void UserNavigatesToBasketManagementAndCreatesANewBasketSuccessfully()
+        [NUnit.Framework.TestCaseAttribute("Basket", "QI to BIN", null)]
+        [NUnit.Framework.TestCaseAttribute("Basket", "BIN to PACK", null)]
+        [NUnit.Framework.TestCaseAttribute("Basket", "GR to QI", null)]
+        public virtual void UserNavigatesToBasketManagementAndCreatesANewBasketSuccessfully(string category, string staging, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "Basket",
                     "UI",
                     "Regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Category", category);
+            argumentsOfScenario.Add("Staging", staging);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User navigates to Basket Management and creates a new basket successfully", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+#line 8
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -107,50 +126,29 @@ namespace warehouse.Features
             else
             {
                 this.ScenarioStart();
-#line 6
-        testRunner.Given("verify that login page is visible successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 7
-        testRunner.When("user enters valid username and valid password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 8
-        testRunner.And("user clicks the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+    this.FeatureBackground();
 #line hidden
 #line 9
-        testRunner.Then("user should be redirected to the dashboard page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.When("user clicks on Add Basket button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
-        testRunner.When("user clicks on \"BASKET MANAGEMENT\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 12
-        testRunner.Then("user should be redirected to Basket Management page successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 13
-        testRunner.When("user clicks on \"Add Basket\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 14
+#line 10
         testRunner.Then("verify that Add Basket page is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 12
+        testRunner.When(string.Format("user selects category {0} and staging {1}", category, staging), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
+        testRunner.And("user clicks on Create Barcode button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+        testRunner.Then("verify that Basket ID displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
 #line 16
-        testRunner.When("user selects category \"Basket\" and staging \"QI to BIN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.When("user clicks on Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
-        testRunner.And("user clicks on \"Create Barcode\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 18
-        testRunner.Then("verify that Basket ID and Barcode are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 20
-        testRunner.When("user clicks on \"Save\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 21
         testRunner.Then("verify basket is saved successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 23
-        testRunner.And("user clicks on last page of basket list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 24
-        testRunner.Then("verify that newly created basket appears in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

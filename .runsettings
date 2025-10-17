@@ -14,7 +14,7 @@
 
     <!-- Optional: if you use remote Selenium (Selenoid/Grid) -->
     <Parameter name="IsSelenoid" value="false" />
-    <Parameter name="SeleniumRemote" value="http://localhost:5555/" />
+    <Parameter name="SeleniumRemote" value="http://localhost:4444/" />
 
     <Parameter name="Username" value="HMU-PDC-PJKT-001" />
     <Parameter name="Password" value="abc,123" />
